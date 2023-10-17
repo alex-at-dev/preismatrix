@@ -1,0 +1,289 @@
+.pm--product-matrix-wrapper {
+  position: relative;
+  max-width: 1000px;
+  padding-top: 2rem;
+  overflow-x: auto;
+}
+
+/* 100px = .pm--product-matrix-wrapper max-width */
+@media (min-width: 1000px) {
+  .pm--product-matrix-wrapper {
+    margin: auto !important;
+  }
+}
+
+.pm--product-matrix {
+  position: relative;
+  width: 100%;
+  border-collapse: collapse;
+  /* border-spacing: 0.5rem 0; */
+}
+
+tbody tr:nth-child(odd),
+tbody tr:nth-child(odd) .pm--feature__title {
+  background-color: var(--wp--preset--color--midground);
+}
+
+tbody tr:nth-child(odd) .pm--highlighted {
+  background-color: #ffe5bc;
+}
+
+/* TIER */
+.pm--tier {
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+  --size: 8rem;
+  min-width: var(--size);
+  width: var(--size);
+  max-width: var(--size);
+  z-index: 1;
+
+  padding: 1.5rem 1rem;
+
+  font-weight: 400;
+  text-align: center;
+  font-size: 1rem;
+
+  background: var(--wp--preset--color--white);
+}
+
+.pm--tier__name {
+  font-size: 1rem;
+  color: var(--wp--preset--color--meta);
+}
+
+.pm--tier__name strong {
+  font-weight: 700;
+  color: var(--wp--preset--color--primary);
+}
+
+.pm--price {
+  margin-top: 0.5rem;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+.pm--price small {
+  display: block;
+  font-size: 0.875rem;
+  line-height: 1rem;
+  color: var(--wp--preset--color--meta);
+}
+
+.pm--tier-banner {
+  position: absolute;
+  top: 0.35rem;
+  left: 0;
+  right: 0;
+
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.03em;
+  text-align: center;
+  text-transform: uppercase;
+
+  color: var(--wp--preset--color--primary);
+}
+
+/* FEATURE */
+.pm--feature_detail th {
+  padding-left: 1.5rem;
+}
+
+.pm--feature__info {
+  position: sticky;
+  left: 0;
+  padding: 0;
+  z-index: 1;
+
+  min-width: 10rem;
+  width: 48vw;
+  max-width: 18rem;
+  cursor: default;
+}
+
+thead .pm--feature__info {
+  top: 0;
+  left: auto;
+}
+
+.pm--feature__title {
+  font-weight: 400;
+  font-size: 0.875rem;
+  text-align: left;
+  padding: 0.75rem 0.5rem;
+
+  background-color: var(--wp--preset--color--white);
+}
+
+.pm--feature__info-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1rem;
+  height: 1rem;
+  margin-left: 0.2rem;
+  padding: 0.3rem;
+  box-sizing: border-box;
+
+  border-radius: 1000px;
+  border: 1px solid var(--wp--preset--color--primary);
+  fill: var(--wp--preset--color--primary);
+}
+
+.pm--feature__info-icon svg {
+  height: 0.6rem;
+}
+
+.pm--feature__description {
+  display: block;
+  position: absolute;
+  bottom: 100%;
+  left: 1rem;
+  width: 12rem;
+  z-index: 10;
+  padding: 1rem;
+  pointer-events: none;
+
+  font-weight: 400;
+  font-size: 0.875rem;
+  text-align: left;
+
+  border-radius: 0.5rem;
+  color: var(--wp--preset--color--meta);
+  background: var(--wp--preset--color--white);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+  transition: transform 0.15s, opacity 0.15s, visibility 0.15s;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(0.5rem);
+}
+
+.pm--feature__info:hover .pm--feature__description {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.pm--feature__description:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 1rem;
+  width: 0;
+  height: 0;
+  border: 0.5rem solid transparent;
+  border-top-color: var(--wp--preset--color--white);
+}
+
+.pm--feature_hidden {
+  display: none;
+}
+
+.pm--has-feature {
+  text-align: center;
+  font-weight: 300;
+  font-size: 0.875rem;
+  color: var(--wp--preset--color--paragraph-alt);
+}
+
+.pm--has-feature__icon {
+  display: flex;
+  align-items: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin: auto;
+  padding: 0.3rem;
+  box-sizing: border-box;
+
+  border-radius: 1000px;
+  fill: var(--wp--preset--color--primary);
+  background: var(--wp--preset--color--midground-alt-2);
+}
+
+.pm--highlighted .pm--has-feature__icon {
+  fill: var(--wp--preset--color--white);
+  background: var(--wp--preset--color--primary);
+}
+
+/* scrolling indicator shadow */
+.pm--intersection-pixel {
+  position: absolute;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.pm--intersection-pixel_left {
+  left: 0;
+}
+
+.pm--intersection-pixel_right {
+  right: 0;
+}
+
+.pm--scroll-shadow:before,
+.pm--scroll-shadow:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  opacity: 0;
+}
+
+.pm--scroll-shadow:before {
+  left: 100%;
+  width: 0.75rem;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05), transparent);
+}
+
+.pm--scroll-shadow:after {
+  --size: 0.75rem;
+  left: calc(100vw - var(--size));
+  width: var(--size);
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.25), transparent);
+}
+
+/* 100px = .pm--product-matrix-wrapper max-width */
+@media (min-width: 1000px) {
+  .pm--scroll-shadow:after {
+    --size: 0.75rem;
+    left: calc(1000px - var(--size));
+    width: var(--size);
+    background-image: linear-gradient(
+      to left,
+      rgba(0, 0, 0, 0.25),
+      transparent
+    );
+  }
+}
+
+.pm--scroll-shadow.pm--scroll-shadow-left_visible:before,
+.pm--scroll-shadow.pm--scroll-shadow-right_visible:after {
+  opacity: 1;
+}
+
+/* HIGHLIGHTS */
+tbody tr:last-child .pm--highlighted {
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.pm--tier.pm--highlighted {
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.pm--highlighted {
+  background-color: var(--wp--preset--color--midground-alt-2);
+}
+
+.border-right {
+  border-right: 1px solid #eee;
+}
