@@ -89,17 +89,20 @@ function fillFeatureTpl(
 }
 
 function insertFeatureData() {
-  const $tbody = document.getElementById(id.tbody);
+  const $table = document.getElementById(id.tbody);
   const $tplGroup = document.getElementById(id.tplGroup) as HTMLTemplateElement | null;
   const $tplFeature = document.getElementById(id.tplFeature) as HTMLTemplateElement | null;
   const $tplCheckIcon = document.getElementById(id.tplCheckIcon) as HTMLTemplateElement | null;
   const $tplInfoIcon = document.getElementById(id.tplInfoIcon) as HTMLTemplateElement | null;
 
-  if (!$tbody || !$tplGroup || !$tplFeature || !$tplCheckIcon || !$tplInfoIcon) return;
+  if (!$table || !$tplGroup || !$tplFeature || !$tplCheckIcon || !$tplInfoIcon) return;
 
   window.PM__FEATURE_DATA.forEach((group) => {
     const $group = fillGroupTpl(group, $tplGroup);
-    if ($group) $tbody.appendChild($group);
+    if (!$group) return;
+    const $tbody = $group.querySelector('tbody');
+    if (!$tbody) return;
+    $table.appendChild($group);
 
     group.items.forEach((feature) => {
       const $feature = fillFeatureTpl(feature, $tplFeature, $tplCheckIcon, $tplInfoIcon);

@@ -8,7 +8,15 @@
 /* 100px = .pm--product-matrix-wrapper max-width */
 @media (min-width: 1000px) {
   .pm--product-matrix-wrapper {
-    margin: auto !important;
+    margin: 6rem auto !important;
+    transform: scale(1.1);
+  }
+}
+
+@media (min-width: 1200px) {
+  .pm--product-matrix-wrapper {
+    margin: 12rem auto !important;
+    transform: scale(1.2);
   }
 }
 
@@ -19,8 +27,8 @@
   /* border-spacing: 0.5rem 0; */
 }
 
-tbody tr:nth-child(odd),
-tbody tr:nth-child(odd) .pm--feature__title {
+tbody tr:nth-child(odd) td,
+tbody tr:nth-child(odd) th {
   background-color: var(--wp--preset--color--midground);
 }
 
@@ -56,6 +64,8 @@ tbody tr:nth-child(odd) .pm--highlighted {
 .pm--tier__name strong {
   font-weight: 700;
   color: var(--wp--preset--color--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
 }
 
 .pm--price {
@@ -101,6 +111,8 @@ tbody tr:nth-child(odd) .pm--highlighted {
   width: 48vw;
   max-width: 18rem;
   cursor: default;
+
+  background-color: var(--wp--preset--color--white);
 }
 
 thead .pm--feature__info {
@@ -113,8 +125,6 @@ thead .pm--feature__info {
   font-size: 0.875rem;
   text-align: left;
   padding: 0.75rem 0.5rem;
-
-  background-color: var(--wp--preset--color--white);
 }
 
 .pm--feature__info-icon {
@@ -210,15 +220,35 @@ thead .pm--feature__info {
 }
 
 /* GROUP */
-.pm--group {
-  border-bottom: 1px solid var(--wp--preset--color--border-alt);
+/* border-radius for groups */
+tbody tr:first-child > :first-child {
+  border-top-left-radius: 6px;
+}
+tbody tr:first-child > :last-child {
+  border-top-right-radius: 6px;
+}
+tbody tr:last-child > :first-child {
+  border-bottom-left-radius: 6px;
+}
+tbody tr:last-child > :last-child {
+  border-bottom-right-radius: 6px;
+}
+
+/* spacer between groups */
+tbody + tbody:before {
+  content: '';
+  display: block;
+  height: 2rem;
 }
 
 .pm--group__title {
-  padding-top: 1rem;
-  padding-bottom: 0.5rem;
+  padding: 1.25rem 0.5rem 0.5rem;
   font-weight: 700;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  color: var(--wp--preset--color--primary);
 }
 
 /* scrolling indicator shadow */
@@ -280,7 +310,7 @@ thead .pm--feature__info {
 }
 
 /* HIGHLIGHTS */
-tbody tr:last-child .pm--highlighted {
+tbody:last-child tr:last-child .pm--highlighted {
   border-radius: 0 0 0.5rem 0.5rem;
 }
 
