@@ -209,6 +209,18 @@ thead .pm--feature__info {
   background: var(--wp--preset--color--primary);
 }
 
+/* GROUP */
+.pm--group {
+  border-bottom: 1px solid var(--wp--preset--color--border-alt);
+}
+
+.pm--group__title {
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
 /* scrolling indicator shadow */
 .pm--intersection-pixel {
   position: absolute;

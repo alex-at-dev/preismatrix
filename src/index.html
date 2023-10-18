@@ -15,7 +15,6 @@
   <body>
     <div class="pm--product-matrix-wrapper alignfull">
       <div class="pm--intersection-pixel pm--intersection-pixel_left"></div>
-      <!-- <div class="pm--intersection-pixel pm--intersection-pixel_right"></div> -->
       <table class="pm--product-matrix">
         <!-- top row -->
         <thead>
@@ -48,6 +47,21 @@
       <!-- <button id="pm--toggle-details" class="pm--button">
         Details anzeigen
       </button> -->
+
+      <!-- template: group -->
+      <template id="pm--tpl-group">
+        <tr class="pm--feature pm--group">
+          <th class="pm--feature__info border-right">
+            <div
+              class="pm--feature__title pm--group__title pm--scroll-shadow"
+            ></div>
+          </th>
+          <td class="pm--has-feature"></td>
+          <td class="pm--has-feature"></td>
+          <td class="pm--has-feature pm--highlighted"></td>
+          <td class="pm--has-feature"></td>
+        </tr>
+      </template>
 
       <!-- template: feature row -->
       <template id="pm--tpl-feature">

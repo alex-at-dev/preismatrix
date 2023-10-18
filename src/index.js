@@ -1,6 +1,7 @@
 (() => {
   const id = {
     tbody: "pm--tbody",
+    tplGroup: "pm--tpl-group",
     tplFeature: "pm--tpl-feature",
     tplCheckIcon: "pm--tpl-check-icon",
     tplInfoIcon: "pm--tpl-info-icon",
@@ -8,6 +9,8 @@
   };
 
   const cls = {
+    group: "pm--group",
+    groupTitle: "pm--group__title",
     feature: "pm--feature",
     featureHidden: "pm--feature_hidden",
     featureDetail: "pm--feature_detail",
@@ -29,34 +32,46 @@
 
   function insertFeatureData() {
     const $tbody = document.getElementById(id.tbody);
+    const $groupTpl = document.getElementById(id.tplGroup);
     const $featureTpl = document.getElementById(id.tplFeature);
     const $tplCheckIcon = document.getElementById(id.tplCheckIcon);
     const $tplInfoIcon = document.getElementById(id.tplInfoIcon);
 
-    window.PM__FEATURE_DATA.forEach((feature) => {
-      /** @type {Element} */
-      const $tpl = $featureTpl?.cloneNode(true).content;
-      const $title = $tpl?.querySelector(sel(cls.featureTitle));
-      const $description = $tpl?.querySelector(sel(cls.featureDescription));
-      const $hasFeatureDivs = $tpl?.querySelectorAll(sel(cls.hasFeature));
+    window.PM__FEATURE_DATA.forEach((group) => {
+      const $tpl = $groupTpl?.cloneNode(true).content;
+      const $title = $tpl?.querySelector(sel(cls.groupTitle));
 
-      if (!$tpl || !$title || !$description || !$hasFeatureDivs.length) return;
+      if (!$tpl || !$title) return;
 
-      $title.textContent = decodeURIComponent(feature.name);
-      if (feature.description) {
-        $description.textContent = decodeURIComponent(feature.description);
-        $title.appendChild($tplInfoIcon.content.cloneNode(true));
-      } else $description.remove();
-      $hasFeatureDivs.forEach(($div, i) => {
-        let html;
-        const val = feature.tiers[i];
-        if (val === 1) html = $tplCheckIcon.innerHTML;
-        else if (val === 0) html = "-";
-        else html = val;
-        $div.innerHTML = html;
-      });
-
+      $title.textContent = group.name;
       $tbody.appendChild($tpl);
+
+      group.items.forEach((feature) => {
+        /** @type {Element} */
+        const $tpl = $featureTpl?.cloneNode(true).content;
+        const $title = $tpl?.querySelector(sel(cls.featureTitle));
+        const $description = $tpl?.querySelector(sel(cls.featureDescription));
+        const $hasFeatureDivs = $tpl?.querySelectorAll(sel(cls.hasFeature));
+
+        if (!$tpl || !$title || !$description || !$hasFeatureDivs.length)
+          return;
+
+        $title.textContent = decodeURIComponent(feature.name);
+        if (feature.description) {
+          $description.textContent = decodeURIComponent(feature.description);
+          $title.appendChild($tplInfoIcon.content.cloneNode(true));
+        } else $description.remove();
+        $hasFeatureDivs.forEach(($div, i) => {
+          let html;
+          const val = feature.tiers[i];
+          if (val === 1) html = $tplCheckIcon.innerHTML;
+          else if (val === 0) html = "-";
+          else html = val;
+          $div.innerHTML = html;
+        });
+
+        $tbody.appendChild($tpl);
+      });
     });
   }
 
