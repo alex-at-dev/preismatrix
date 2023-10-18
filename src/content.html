@@ -1,0 +1,84 @@
+<div class="pm--product-matrix-wrapper alignfull">
+  <div class="pm--intersection-pixel pm--intersection-pixel_left"></div>
+  <table class="pm--product-matrix">
+    <!-- top row -->
+    <thead>
+      <tr>
+        <th class="pm--feature__info"></th>
+        <th class="pm--tier">
+          <div class="pm--tier__name">Bewertung<strong>Free</strong></div>
+          <div class="pm--price">ab 0 €* <small>pro Monat</small></div>
+        </th>
+        <th class="pm--tier">
+          <div class="pm--tier__name">Bewertung<strong>Start</strong></div>
+          <div class="pm--price">ab 19 €* <small>pro Monat</small></div>
+        </th>
+        <th class="pm--tier pm--highlighted">
+          <div class="pm--tier__name">Bewertung<strong>Go</strong></div>
+          <div class="pm--price">ab 69 €* <small>pro Monat</small></div>
+          <div class="pm--tier-banner">Am beliebtesten</div>
+        </th>
+        <th class="pm--tier">
+          <div class="pm--tier__name">Bewertung<strong>Pro</strong></div>
+          <div class="pm--price">ab 89 €* <small>pro Monat</small></div>
+        </th>
+      </tr>
+      <tr class="pm--intersection-pixel pm--intersection-pixel_right"></tr>
+    </thead>
+    <!-- html inserted here -->
+    <tbody id="pm--tbody"></tbody>
+  </table>
+
+  <!-- <button id="pm--toggle-details" class="pm--button">
+    Details anzeigen
+  </button> -->
+
+  <!-- template: group -->
+  <template id="pm--tpl-group">
+    <tr class="pm--feature pm--group">
+      <th class="pm--feature__info border-right">
+        <div class="pm--feature__title pm--group__title pm--scroll-shadow"></div>
+      </th>
+      <td class="pm--has-feature"></td>
+      <td class="pm--has-feature"></td>
+      <td class="pm--has-feature pm--highlighted"></td>
+      <td class="pm--has-feature"></td>
+    </tr>
+  </template>
+
+  <!-- template: feature row -->
+  <template id="pm--tpl-feature">
+    <tr class="pm--feature">
+      <th class="pm--feature__info border-right">
+        <div class="pm--feature__title pm--scroll-shadow"></div>
+        <div class="pm--feature__description"></div>
+      </th>
+      <td class="pm--has-feature">-</td>
+      <td class="pm--has-feature">-</td>
+      <td class="pm--has-feature pm--highlighted">-</td>
+      <td class="pm--has-feature">-</td>
+    </tr>
+  </template>
+
+  <!-- template: check-icon -->
+  <template id="pm--tpl-check-icon">
+    <div class="pm--has-feature__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+        <path
+          d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
+        />
+      </svg>
+    </div>
+  </template>
+
+  <!-- template: info-icon -->
+  <template id="pm--tpl-info-icon">
+    <div class="pm--feature__info-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512">
+        <path
+          d="M48 80a48 48 0 1 1 96 0A48 48 0 1 1 48 80zM0 224c0-17.7 14.3-32 32-32H96c17.7 0 32 14.3 32 32V448h32c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H64V256H32c-17.7 0-32-14.3-32-32z"
+        />
+      </svg>
+    </div>
+  </template>
+</div>

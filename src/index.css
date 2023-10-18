@@ -168,7 +168,7 @@ thead .pm--feature__info {
 }
 
 .pm--feature__description:before {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   top: 100%;
@@ -241,7 +241,7 @@ thead .pm--feature__info {
 
 .pm--scroll-shadow:before,
 .pm--scroll-shadow:after {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   top: 0;
@@ -270,11 +270,7 @@ thead .pm--feature__info {
     --size: 0.75rem;
     left: calc(1000px - var(--size));
     width: var(--size);
-    background-image: linear-gradient(
-      to left,
-      rgba(0, 0, 0, 0.25),
-      transparent
-    );
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.25), transparent);
   }
 }
 
