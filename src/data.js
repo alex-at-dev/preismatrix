@@ -1,6 +1,6 @@
 window.PM__FEATURE_DATA = [
   {
-    name: 'group 1',
+    name: 'Ihre Firma präsentieren',
     items: [
       {
         name: 'Kostenloses Basis-Firmenprofil',
@@ -25,17 +25,17 @@ window.PM__FEATURE_DATA = [
           'Verlinkung aus weiteren reichweitenstarken Verzeichnissen & Partnern wie 11880.com und passenden 11880-Fachportalen.  ',
         tiers: [1, 1, 1, 1],
       },
-    ],
-  },
-  {
-    name: 'group2',
-    items: [
       {
         name: 'Verifiziertes Firmenprofil',
         description:
           'Schaffen Sie mehr Aufmerksamkeit und Vertrauen, durch ein verifiziertes Profil.',
         tiers: [0, 1, 1, 1],
       },
+    ],
+  },
+  {
+    name: 'Alles im Blick haben',
+    items: [
       {
         name: 'Bewertungsstatus',
         description:
@@ -60,6 +60,11 @@ window.PM__FEATURE_DATA = [
           'Unter Einsatz künstlicher Intelligenz werden bei der Verarbeitung der Bewertungen häufigst gefundenen Begriffe in ihrem jeweiligen Sinnzusammenhang als positiv (grün), neutral (grau) oder negativ (rot) dargestellt.',
         tiers: [1, 1, 1, 1],
       },
+    ],
+  },
+  {
+    name: 'Bewertungen managen',
+    items: [
       {
         name: 'Weitere Bewertungsquellen hinzufügen',
         description: 'Fügen Sie im Kundenbereich weitere Portale zu Ihrer Zusammenfassung hinzu.',
@@ -83,6 +88,11 @@ window.PM__FEATURE_DATA = [
           'Sammeln Sie mit einer Karte Bewertungen überall dort, wo Sie ein Firmenprofil haben und legen Sie die Karten unkompliziert Ihrem Geschäftsverkehr bei. Visitenkartenformat inkl. Nutzungsreport.',
         tiers: ['optional', 'optional', 'optional', 1],
       },
+    ],
+  },
+  {
+    name: 'Vertrauen schaffen',
+    items: [
       {
         name: 'Online Bewertungssiegel für Ihre Webseite',
         description:
@@ -112,6 +122,11 @@ window.PM__FEATURE_DATA = [
           'Ab einem Bewertungsschnitt von 4,5 Sternen können Sie einmal im Monat das digitale TOP-Anbieter Zertifikate anfordern und damit werben.',
         tiers: [0, 1, 1, 1],
       },
+    ],
+  },
+  {
+    name: 'Reichweite erhöhen',
+    items: [
       {
         name: 'Anzeige',
         description:
@@ -124,6 +139,11 @@ window.PM__FEATURE_DATA = [
           'Exklusive große Werbefläche in Ihrer Branche, in der einzig und allein nur Sie werben für maximale Aufmerksamkeit auf unserem Portal.',
         tiers: [0, 'optional', 'optional', 'optional'],
       },
+    ],
+  },
+  {
+    name: 'Service',
+    items: [
       {
         name: 'Kostenloser E-Mail Support',
         description:
