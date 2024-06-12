@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
   <head>
     <meta charset="UTF-8" />
@@ -16,7 +16,9 @@
       html,
       body {
         width: 100%;
-        font: 400 16px/1.5 'Plus Jakarta Sans', sans-serif;
+        font:
+          400 16px/1.5 'Plus Jakarta Sans',
+          sans-serif;
         margin: 0;
       }
 
@@ -28,6 +30,19 @@
         --wp--preset--color--midground-alt-2: #ffebcc;
         --wp--preset--color--primary: #ff9328;
         --wp--preset--color--border-alt: #e0e0e0;
+
+        --wp--preset--color--background: #111;
+
+        padding: 4rem 0;
+      }
+
+      .wp-element-button {
+        font: inherit;
+        text-decoration: none;
+
+        color: white;
+        background-color: var(--wp--preset--color--background);
+        border-radius: 1000px;
       }
     </style>
   </head>

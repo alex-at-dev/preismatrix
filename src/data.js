@@ -162,4 +162,22 @@ window.PM__FEATURE_DATA = [
       },
     ],
   },
+
+  {
+    name: 'ACTIONS',
+    actions: [
+      {
+        label: 'Buy',
+        href: '#one',
+      },
+      {
+        label: 'Buy two',
+        href: '#two',
+      },
+      {
+        label: 'Buy three',
+        href: '#three',
+      },
+    ],
+  },
 ];
